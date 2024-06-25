@@ -1,0 +1,7 @@
+Flask
+cs50
+flask_session
+datetime
+flask_mail
+flask_wtf.csrf
+apscheduler

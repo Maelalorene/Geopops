@@ -1,0 +1,145 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #66C02A;
+}
+
+h1:hover{
+text-align: center;
+color: #e61010;
+
+}
+
+
+form{
+    width:300px;
+    margin:0 auto;
+}
+button{
+    background-color: #007bff;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    padding: 2px;
+    border-top-left-radius:12px ;
+    border-top-right-radius:12px ;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-left: 30px;
+    font-size: 16px 
+    
+}
+.form-header img {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 100px; /* ajustez la taille selon vos besoins */
+            height: auto;
+        }
+
+.container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.h1{
+    position: absolute;
+    top:0;
+}
+.centered-form{
+    padding: 100px;
+    width:300px;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color:azure;
+    border-radius: 20px;
+    Box-shadow :10px 10px 20px rgba(0, 0, 0, 0.5); /* Une nuance plus foncée de vert */
+
+
+}
+.logout-link{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.logout-link:hover{
+    background-color: #ccc;
+}
+.champ{
+    display: flex;
+    /* flex-direction: column;*/
+    justify-content:space-evenly;
+    align-self: center;
+    padding: 10px;
+
+}
+
+#submit{
+width:240px;
+
+
+}
+
+input{
+    margin-left: 20px;
+    width: 250px;
+    padding: 8px;
+    border-radius: 5px;
+}
+a{
+    display: block;
+    margin-top: 10px;
+    
+}
+p{
+    color: red;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace de 10px entre les boutons */
+    margin-left: 20px; /* Décalage vers la droite */
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    
+}
+.btn-annuler {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 240px;
+}
+.btn-modifier {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 240px;
+}
+
+.btn-annuler a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+select{
+    margin-left: 25px;
+    width: 235px;
+    padding: 8px;
+}
+img{
+    border-radius: 15px;
+}

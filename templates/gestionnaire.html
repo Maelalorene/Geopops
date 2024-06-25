@@ -1,0 +1,42 @@
+{%extends 'structure.html'%}
+{% block title%}login{% endblock title%}
+{% block liens%}
+<link rel="stylesheet" href="/static/css/styles.css">   
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src=" /static/js/script.js"> </script> 
+{% endblock liens%}
+{% block body %}
+<div id="sidebar" class="bg-light">
+    <a href="index"><i class="fas fa-home"></i> Accueil</a>
+    <a href="/change"><i class="fas fa-key"></i> Changer le mot de passe</a>
+    <a href="/historique"><i class="fa fa-history"></i> Historique des itineraires </a>
+    <a href="/gestionnaire" class="active"><i class="fas fa-user-cog"></i> Gestionnaire des utilisateurs </a>
+    <a href="#" id="button"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+
+</div>
+
+<button id="sidebarToggle">☰ Menu</button>
+
+<h1><center > Gestionnaire des comptes</center></h1>
+<a href="/compte" id="compte" class="btn btn-primary"><i class="fas fa-user-plus"></i> Créer un compte</a>
+    <table id="table" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nom d'utilisateur </th> 
+                <th>Statut</th>    
+                <th> Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user['nom_user'] }}</td>
+                <td>{{ user['statut'] }}</td>
+                <td><a href="/delete_user?id={{user['id']}}" class="btn btn-danger"> <i class="fas fa-trash"></i> Supprimer</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+{%endblock body%}

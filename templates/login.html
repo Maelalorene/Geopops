@@ -1,0 +1,32 @@
+{%extends 'structure.html'%}
+{% block title%}login{% endblock title%}
+{% block liens%}
+<link rel="stylesheet" href="/static/css/log.css">     
+<script src="/static/js/logi.js"> </script> 
+{% endblock liens%}
+
+{%block body%}
+<div class="container">
+    <form id="login-form" class="centered-form" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <div class="form-header">
+            <img src="static/images/icone.jpeg" alt="Logo">
+        </div>
+        <h1>Connexion</h1>
+        <p> <i>{{error}}</i></p>
+        <div class="champ">
+        <label for="username"><i class="fa fa-user-circle" style="font-size:19px"></i></label> 
+        <input type="text" id="username"  class="input-field"  name="user" placeholder="Nom d'utilisateur" required>
+        </div>
+        <div class="champ">
+        <label for="password"><i class="fa fa-key" style="font-size:19px"></i></label>  
+        <input type="password" id="password" class="input-field"  name="pass" placeholder="Mot de passe" required>
+        </div><br>
+        <div class="button-group">
+        <button type="submit" id="submit"></i> Se connecter</button>
+        </div>
+        <a href="/forgot_password" class="top-right-link"> Mot de passe oublie?</a>
+        
+    </form>
+    </div>
+{% endblock body%}

@@ -1,0 +1,52 @@
+{%extends 'structure.html'%}
+{% block title%}compte{% endblock title%}
+{% block liens%}
+<link rel="stylesheet" href="/static/css/log.css">     
+<script src=" /static/js/logi.js"> </script> 
+{% endblock liens%}
+
+{%block body%}
+    <div class="container">
+    
+    <form id=" compte-form" class="centered-form" method="post">
+
+        <h1>
+            Inscription
+        </h1>
+        {% for i in errors %}
+        <p><i>{{i}} </i> </p>
+        {% endfor %}
+        <div class="champ">
+            <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+        <label for="username"><i class="fa fa-user-circle" style="font-size:19px"></i></label> 
+        <input type="text" id=" username"  class="input-field"  name="user" placeholder="Nom d'utilisateur" required><br>
+        </div>
+        
+        <div class="champ">
+        <label for="e-mail"><i class="fa fa-envelope" style="font-size:20px"></i></label>
+        <input type="email" id=" e-mail"  class="input-field"  name="mail" placeholder="matrix@gmail.com" required><br>  
+        </div>
+        <div class="champ">
+        <label for="password"><i class="fa fa-key" style="font-size:24px"></i></label>  
+        <input type="password" id=" password" class="input-field"  name="passw" placeholder="Mot de passe" required><br><br>
+        </div>
+        <div class="champ">
+        <label for="new_password"><i class="fa fa-key" style="font-size:24px"></i></label>  
+        <input type="password" id=" new_password" class="input-field"  name="new_passw" placeholder=" confirmer votre de mot de passe" required><br><br>
+        </div>
+        <div class="champ">
+            <label for="statut"><i class="fa fa-user" style="font-size:20px"></i></label>
+            <select id="statut" name="statut" class="input-field">
+                <option value="admin">Admin</option>
+                <option value="standard">Standard</option>
+            </select>
+        </div><br>
+        <div class="button-group">
+        <button type="submit" class="btn-modifier"> Creer un compte</button>
+        <button type="submit" class="btn-annuler" ><a  href="/index"> Retour </a></button>
+        </div>
+    </form>
+        
+    </div>
+    
+{% endblock body%}

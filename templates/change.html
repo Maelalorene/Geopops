@@ -1,0 +1,40 @@
+{%extends 'structure.html'%}
+{% block title%}Change{% endblock title%}
+{% block liens%}
+<link rel="stylesheet" href="/static/css/log.css">     
+<script src=" /static/js/Changement.js"> </script> 
+{% endblock liens%}
+{%block body%}
+    <div class="container">
+   
+    {% if erreur %}
+        <p style="color: red;">{{ erreur }}</p>
+    {% endif %}
+
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    <div class="container">
+    <form id=" compte-form" class="centered-form" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <div class="form-header">
+            <img src="static/images/icone.jpeg" alt="Logo">
+        </div>
+        <h1>Modification du mot de passe</h1>
+        <div class="champ">
+            <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+            <label for="password"><i class="fa fa-key" style="font-size:24px"></i></label>  
+            <input type="password" id="oldpass" class="input-field"  name="passw" placeholder=" Ancien Mot de passe" required><br><br>
+            </div>
+            <div class="champ">
+            <label for="password"><i class="fa fa-key" style="font-size:24px"></i></label>  
+            <input type="password" id="newpass" class="input-field"  name="pass" placeholder=" Nouveau Mot de passe" required><br><br>
+            </div><br>
+            <div class="button-group">
+            <button type="submit" class="btn-modifier"> Modifier </button>
+            <button type="submit" class="btn-annuler" ><a  href="/index"> Retour </a></button>
+            </div>
+    </form>        
+    {%endblock body%}
+    
+    
